@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section><h3>Accessibility and you</h3></section>
+				<section>Web accessibility refers to the inclusive practice of removing barriers that prevent interaction with, or access to websites, by people with disabilities. When sites are correctly designed, developed and edited, all users have equal access to information and functionality.</section>
+
+				<!-- Semantic html -->
+				<section>
+					<section>
+						<h3>
+							Semantic html
+						</h3>
+					</section>
+					<section>
+						<p>
+							Many screen readers have functionality that allows a user to select to read only the headings on the page, or only the links. Giving precedence to the way headings and links are written is a significant way we can make browsing the web easier for these users.
+						</p>
+					</section>
+					<section>
+						<h3>
+							<strong class="fragment highlight-red">
+							div </strong>and 
+							<strong class="fragment highlight-red">
+							span </strong>
+							tags 
+						</h3>
+						<h5 class="fragment">
+							use for layout design <strong>ONLY!!!!!</strong>
+						</h5>
+						<p class="fragment">
+							They’re semantically meaningless, they don’t have keyboard or touch support in any browser, and they don’t communicate anything to the accessibility API. For example, never use a div or span for a button when you could use a semantically meaningful button tag.
+						</p>
+					</section>
+					<section>
+						<h4>Neglected html</h4>
+						<img src="img/badHtml.png" alt="semantically terrible html">
+					</section>
+					<section>
+						<h4>
+							Semantic html tags
+						</h4>
+						<ul>
+							<li>header</li>
+							<li>main</li>
+							<li>article</li>
+							<li>aside</li>
+							<li>footer</li>
+							<li>nav</li>
+							<li>section</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Headings</h4>
+						<p>
+							All pages should contain <strong>One</strong> h1 tag and should go into descending order.
+						</p>
+					</section>
+					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+						<h3>Straight Forward Right</h3>
+					</section>
+				</section>
+				<!-- end of semantic html-->
+
+				<!-- forms -->
+				<section>
+					<section>
+						<h3>Forms</h3>
+					</section>
+					<section>
+						<h5>Labelling Controls</h5>
+						<p>
+							Provide labels to identify all form controls, including text fields, checkboxes, radio buttons, and drop-down menus. In most cases, this is done by using the <label> element.
+						</p>
+						<img src="img/labelling.png" alt="">
+					</section>
+					<section>
+						<h5>Approaches to labelling</h5>
+						<ol>
+							<li>Explicitly declaring the label</li>
+							<li>Hiding the label text, but still explicitly declaring</li>
+							<li>using aria-label </li>
+							<img src="img/ariaLabel.png" alt="">
+							<li>using aria-labelledby</li>
+							<li>Using title attribute <- not ideal</li>
+						</ol>
+					</section>
+					<section>
+						<h5>Explicitly Labelling Buttons</h5>
+						<p>This gives even further hints to peopole using screen readers as to what the actual button does</p>
+						<p>Example:</p>
+						&lt;button type="submit"&gt;Purchase &lt;button&gt;
+					</section>
+					<section>
+						<h5>Grouping Controls</h5>
+						<p>Grouping related form controls makes forms more understandable for all users, as related controls are easier to identify.</p>
+					</section>
+					<section>
+						<h5>Radio buttons and chcekbox groups</h5>
+						<p>These groups should always be wrapped inside a &lt;fieldset&gt; tag</p>
+						<img src="img/groupingControls.png" alt="">
+					</section>
+					<section data-background="https://media.giphy.com/media/xT9IgNzWyweRI8O9tC/giphy.gif">
+						<h3>Easy Peasy</h3>
+					</section>
+				</section>
+				<!-- end of forms -->
+	
+				<!-- images and icons -->
+				<section>
+					<section>
+						<h3>Images and Icons</h3>
+					</section>
+					<section>
+						<h5>Decorative images</h5>
+						<p>These images don't add information to the content of the page.</p>
+						<img src="img/balloons.jpg" alt="" style="width: 250px; height: 250px; margin: 0 auto; display: block;">
+						&lt;img src="img/balloons.jpg" alt=""&gt;
+					</section>
+					<section>
+						<h5>Icons</h5>
+
+					</section>
+				</section>
+				<!-- end of images-->
+
+				<!-- ARIA -->
+				<section>
+					<section data-background-transition="zoom">
+						<h3>ARIA</h3>
+					</section>
+					<section>
+						<p>
+							Accessible Rich Internet Applications (ARIA) is a set of attributes that define ways to make Web content and Web applications (especially those developed with JavaScript) more accessible to people with disabilities.
+						</p>
+					</section>
+				</section>
+				<!-- end of aria -->
+
+				<!-- tools  -->
+				<section>
+					<section>
+						<h3>Tools & Tech</h3>
+					</section>
+					<section>
+						<h4>Screen Readers</h4>
+						<p><a href="http://www.chromevox.com">ChromeVox</a></p>
+						<p><a href="https://www.nvaccess.org">NV Access</a></p>
+					</section>
+					<section>
+						<h4>Automated Test Tools</h4>
+						<p><a href="https://www.deque.com/axe/?gclid=EAIaIQobChMI3dD1h5T63QIVRrjACh2HRAOsEAAYASAAEgLNwfD_BwE">Axe</a></p>
+						<p><a href="https://wave.webaim.org/extension/">Wave</a></p>
+					</section>
+				</section>
+				<!-- end of tools -->
+
+				<section data-background="https://media.giphy.com/media/XbPFv2ihC3rRm/giphy.gif">
+					<h3>Questions?</h3>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+			Reveal.configure({ backgroundTransition: 'zoom' })
+		</script>
+	</body>
+</html>
